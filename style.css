@@ -1,0 +1,1116 @@
+css
+/* =========================================
+   LA MAGIA DE LEER
+   Diseño mágico / literario
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    color: #f8f2fa;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(132, 116, 184, 0.20), transparent 28%),
+        radial-gradient(circle at 80% 15%, rgba(190, 139, 180, 0.16), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(96, 123, 177, 0.18), transparent 32%),
+        linear-gradient(135deg, #11172d, #1a1935 45%, #211a35);
+
+    text-align: center;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ATMÓSFERA MÁGICA
+   ========================================= */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* Halo superior */
+
+body::before {
+    width: 500px;
+    height: 500px;
+
+    top: -220px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(188, 169, 226, 0.15),
+        transparent 68%
+    );
+
+    filter: blur(15px);
+}
+
+
+/* Brillo inferior */
+
+body::after {
+    width: 400px;
+    height: 400px;
+
+    bottom: -220px;
+    right: -120px;
+
+    background: radial-gradient(
+        circle,
+        rgba(213, 158, 194, 0.12),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================================
+   TARJETA PRINCIPAL
+   ========================================= */
+
+#inicio {
+    width: min(850px, 100%);
+
+    padding: 60px 55px;
+
+    position: relative;
+
+    border: 1px solid rgba(216, 197, 235, 0.22);
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(40, 42, 76, 0.82),
+            rgba(30, 27, 57, 0.88)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(4, 6, 20, 0.45),
+        0 0 50px rgba(156, 128, 197, 0.10);
+
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    animation: aparecer 1s ease;
+}
+
+
+/* Brillo decorativo de la tarjeta */
+
+#inicio::before {
+    content: "✦   ✧   📖   ✧   ✦";
+
+    position: absolute;
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(225, 210, 241, 0.65);
+
+    font-size: 0.9rem;
+    letter-spacing: 7px;
+
+    text-shadow:
+        0 0 8px rgba(225, 205, 245, 0.45),
+        0 0 18px rgba(190, 160, 220, 0.25);
+
+    white-space: nowrap;
+
+    animation: brilloDecoracion 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+   ========================================= */
+
+h1 {
+    margin: 10px 0 20px;
+
+    font-family:
+        "Segoe Script",
+        "Lucida Handwriting",
+        cursive;
+
+    font-size: clamp(3rem, 8vw, 5.5rem);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #eee3fa;
+
+    text-shadow:
+        0 0 10px rgba(219, 194, 241, 0.30),
+        0 0 30px rgba(166, 139, 202, 0.18);
+
+    animation: brilloTitulo 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SUBTÍTULO
+   ========================================= */
+
+#inicio h2 {
+    display: block;
+
+    margin: 0 auto 28px;
+
+    max-width: 700px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+
+    font-weight: normal;
+
+    line-height: 1.35;
+
+    color: #d9d4ef;
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+p {
+    max-width: 680px;
+
+    margin: 18px auto;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: #ddd9e8;
+}
+
+
+/* =========================================
+   BOTONES
+   ========================================= */
+
+button {
+    position: relative;
+
+    margin-top: 22px;
+
+    padding: 15px 34px;
+
+    border: 1px solid rgba(226, 207, 239, 0.35);
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7772a8,
+            #9b79a7
+        );
+
+    color: #fff8ff;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(80, 67, 116, 0.35),
+        0 0 20px rgba(190, 157, 213, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #8580b5,
+            #aa84b5
+        );
+
+    box-shadow:
+        0 12px 30px rgba(83, 68, 123, 0.45),
+        0 0 28px rgba(209, 177, 225, 0.22);
+}
+
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   RESULTADOS
+   ========================================= */
+
+#resultado {
+    width: min(950px, 100%);
+
+    padding: 45px 40px;
+
+    border: 1px solid rgba(218, 199, 235, 0.22);
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(39, 41, 73, 0.90),
+            rgba(31, 28, 57, 0.94)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(4, 6, 20, 0.50),
+        0 0 45px rgba(151, 125, 194, 0.10);
+
+    backdrop-filter: blur(12px);
+
+    animation: aparecer 0.8s ease;
+}
+
+
+/* =========================================
+   TÍTULOS DEL RESULTADO
+   ========================================= */
+
+#resultado h1 {
+    margin-bottom: 30px;
+
+    font-size: clamp(2.7rem, 7vw, 4.5rem);
+}
+
+
+#resultado h2 {
+    margin-top: 30px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #e5d8f1;
+
+    font-weight: normal;
+}
+
+
+#resultado h3 {
+    margin-top: 30px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.35rem;
+
+    color: #d9bfe0;
+}
+
+
+/* =========================================
+   SEPARADORES
+   ========================================= */
+
+hr {
+    width: 65%;
+
+    margin: 35px auto;
+
+    border: 0;
+
+    border-top: 1px solid rgba(218, 197, 232, 0.20);
+
+    position: relative;
+}
+
+
+/* =========================================
+   DESTACADOS
+   ========================================= */
+
+strong {
+    color: #e3cce9;
+}
+
+
+em {
+    color: #cfc4df;
+}
+
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes brilloTitulo {
+    0%,
+    100% {
+        text-shadow:
+            0 0 10px rgba(219, 194, 241, 0.25),
+            0 0 30px rgba(166, 139, 202, 0.15);
+    }
+
+    50% {
+        text-shadow:
+            0 0 14px rgba(219, 194, 241, 0.45),
+            0 0 38px rgba(166, 139, 202, 0.24);
+    }
+}
+
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    main {
+        padding: 25px 14px;
+    }
+
+    #inicio,
+    #resultado {
+        padding: 40px 22px;
+
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #inicio h2 {
+        font-size: 1.55rem;
+    }
+
+    p {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    button {
+        width: 100%;
+        max-width: 330px;
+    }
+}
+
+/* =========================================
+   FUENTES DEL QUIZ
+   ========================================= */
+
+#inicio h2 {
+    position: relative;
+    z-index: 1;
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+
+/* Respuestas */
+
+#opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    max-width: 650px;
+    margin: 30px auto 0;
+}
+
+
+button.opcion {
+    width: 100%;
+    margin-top: 0;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   OPCIONES DEL QUIZ
+   ========================================= */
+
+#opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: min(650px, 100%);
+    margin: 32px auto 0;
+}
+
+
+button.opcion {
+    width: 100%;
+    margin: 0;
+
+    padding: 17px 22px;
+
+    border: 1px solid rgba(207, 190, 229, 0.22);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(88, 91, 137, 0.30),
+            rgba(126, 91, 133, 0.24)
+        );
+
+    color: #eee9f4;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+
+    box-shadow:
+        0 5px 18px rgba(5, 7, 25, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+button.opcion:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(211, 190, 231, 0.48);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(111, 112, 163, 0.42),
+            rgba(155, 111, 153, 0.34)
+        );
+
+    box-shadow:
+        0 9px 25px rgba(12, 12, 35, 0.30),
+        0 0 20px rgba(190, 163, 218, 0.10);
+}
+
+
+button.opcion:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   PÁGINA DEL RESULTADO
+   ========================================= */
+
+.pantalla-resultado hr {
+    width: min(520px, 70%);
+    height: 20px;
+
+    margin: 42px auto;
+
+    border: 0;
+
+    position: relative;
+
+    opacity: 0.8;
+}
+
+.pantalla-resultado hr::before {
+    content: "✦  ✧  ✦";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 0 18px;
+
+    color: rgba(220, 201, 239, 0.72);
+
+    font-size: 0.8rem;
+    letter-spacing: 7px;
+
+    white-space: nowrap;
+
+    background: #211d3a;
+
+    text-shadow:
+        0 0 8px rgba(224, 204, 245, 0.45),
+        0 0 18px rgba(191, 158, 220, 0.22);
+}
+
+.pantalla-resultado hr::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 50%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216, 197, 235, 0.22),
+            transparent
+        );
+}
+
+/* Título de entrada */
+
+.pantalla-resultado > h2:first-child {
+    margin-top: 0;
+
+    font-family:
+        "Bodoni Moda",
+        Georgia,
+        serif;
+
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+
+    font-weight: 500;
+
+    color: #d9cde9;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Título de la historia */
+
+.pantalla-resultado > h1 {
+    margin: 12px auto 35px;
+
+    max-width: 800px;
+
+    font-size: clamp(2.8rem, 7vw, 4.8rem);
+}
+
+
+/* =========================================
+   INFORMACIÓN DE LA HISTORIA
+   ========================================= */
+
+.pantalla-resultado > p:has(strong) {
+    margin: 24px auto 6px;
+
+    color: #d9cde7;
+
+    font-family:
+        "Nunito Sans",
+        sans-serif;
+
+    font-size: 0.92rem;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+}
+
+
+.pantalla-resultado > p:has(strong) + p {
+    width: min(750px, 100%);
+
+    margin: 0 auto 22px;
+
+    padding: 18px 22px;
+
+    border: 1px solid rgba(210, 190, 229, 0.14);
+    border-radius: 16px;
+
+    background:
+        rgba(100, 92, 139, 0.15);
+
+    color: #eee8f3;
+
+    line-height: 1.7;
+
+    box-shadow:
+        0 5px 18px rgba(5, 7, 25, 0.16);
+}
+
+
+/* =========================================
+   SEPARADORES
+   ========================================= */
+
+.pantalla-resultado hr {
+    width: 70%;
+
+    margin: 38px auto;
+
+    border: 0;
+
+    border-top: 1px solid rgba(216, 197, 235, 0.18);
+}
+
+
+/* =========================================
+   TRAMA
+   ========================================= */
+
+.pantalla-resultado > h3 {
+    margin: 35px auto 20px;
+
+    font-family:
+        "Bodoni Moda",
+        Georgia,
+        serif;
+
+    font-size: 1.6rem;
+
+    font-weight: 600;
+
+    color: #e3d2ed;
+}
+
+
+.pantalla-resultado > h3 + p {
+    width: min(780px, 100%);
+
+    margin: 0 auto;
+
+    padding: 28px 32px;
+
+    border-left: 2px solid rgba(196, 165, 211, 0.45);
+
+    border-radius: 4px 18px 18px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(112, 94, 142, 0.15),
+            rgba(112, 94, 142, 0.05)
+        );
+
+    color: #e4deea;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   RECOMENDACIÓN
+   ========================================= */
+
+.pantalla-resultado h3 + p em {
+    color: #cfc2dd;
+}
+
+
+.pantalla-resultado h3 + p + h2 {
+    margin-top: 30px;
+
+    color: #ead9ef;
+}
+
+
+/* =========================================
+   BOTÓN FINAL
+   ========================================= */
+
+.pantalla-resultado > button {
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .pantalla-resultado {
+        padding: 40px 20px !important;
+        border-radius: 22px;
+    }
+
+    .pantalla-resultado > h1 {
+        font-size: 2.8rem;
+    }
+
+    .pantalla-resultado > h3 {
+        font-size: 1.4rem;
+    }
+
+    .pantalla-resultado > h3 + p {
+        padding: 22px 20px;
+
+        font-size: 0.98rem;
+        line-height: 1.8;
+    }
+
+    .pantalla-resultado > p:has(strong) + p {
+        padding: 16px 18px;
+    }
+}
+
+/* =========================================
+   POLVO MÁGICO
+   ========================================= */
+
+body {
+    position: relative;
+}
+
+
+/* Capa de pequeñas partículas */
+
+/* =========================================
+   ✨ POLVO MÁGICO
+   ========================================= */
+
+body {
+    position: relative;
+}
+
+/* Primera capa de brillitos */
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(240, 225, 255, 0.85) 1.5px, transparent 2px),
+        radial-gradient(circle, rgba(220, 190, 240, 0.70) 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(245, 200, 225, 0.65) 1.2px, transparent 2px);
+
+    background-size:
+        170px 170px,
+        230px 230px,
+        300px 300px;
+
+    background-position:
+        20px 40px,
+        100px 120px,
+        180px 60px;
+
+    opacity: 0.75;
+
+    animation: polvoMagico 16s ease-in-out infinite;
+}
+
+
+/* Segunda capa: partículas más pequeñas */
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(235, 215, 255, 0.55) 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255, 210, 235, 0.45) 1px, transparent 1.8px);
+
+    background-size:
+        260px 260px,
+        340px 340px;
+
+    background-position:
+        50px 100px,
+        200px 20px;
+
+    opacity: 0.65;
+
+    animation: polvoMagicoLento 25s ease-in-out infinite;
+}
+
+
+/* Movimiento suave */
+@keyframes polvoMagico {
+
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translate(10px, -15px);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.55;
+    }
+}
+
+
+@keyframes polvoMagicoLento {
+
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: translate(-12px, 10px);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.45;
+    }
+}
+
+
+/* Movimiento suave */
+
+@keyframes polvoMagico {
+
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translate(12px, -18px);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.55;
+    }
+}
+
+
+@keyframes polvoMagicoLento {
+
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translate(-15px, 12px);
+        opacity: 0.55;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.35;
+    }
+}
+
+@keyframes brilloDecoracion {
+
+    0%, 100% {
+        opacity: 0.55;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.06);
+    }
+}
+
+/* =========================================
+   📖 RECOMENDACIÓN DEL LIBRO
+   ========================================= */
+
+.pantalla-resultado h3:last-of-type {
+    margin-top: 45px;
+
+    font-family:
+        "Bodoni Moda",
+        Georgia,
+        serif;
+
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+
+    color: #eadcf1;
+
+    text-shadow:
+        0 0 10px rgba(220, 195, 235, 0.18);
+}
+
+
+/* Frase introductoria */
+.pantalla-resultado h3:last-of-type + p {
+    width: min(700px, 100%);
+
+    margin: 0 auto 28px;
+
+    padding: 18px 24px;
+
+    color: #cfc3dc;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* Título del libro */
+.pantalla-resultado h3:last-of-type + p + h2 {
+    margin: 10px auto 5px;
+
+    font-family:
+        "Bodoni Moda",
+        Georgia,
+        serif;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    font-weight: 600;
+
+    color: #f0e4f5;
+
+    text-shadow:
+        0 0 12px rgba(218, 190, 232, 0.22);
+}
+
+
+/* Autor */
+.pantalla-resultado h3:last-of-type + p + h2 + p {
+    margin: 0 auto 22px;
+
+    color: #c9b8d5;
+
+    font-family:
+        "Nunito Sans",
+        sans-serif;
+
+    font-size: 0.95rem;
+}
+
+
+/* Descripción */
+.pantalla-resultado h3:last-of-type + p + h2 + p + p {
+    width: min(680px, 100%);
+
+    margin: 0 auto;
+
+    padding: 25px 30px;
+
+    border: 1px solid rgba(216, 197, 235, 0.16);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(105, 88, 139, 0.16),
+            rgba(137, 91, 126, 0.10)
+        );
+
+    color: #e1d9e7;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    box-shadow:
+        0 8px 30px rgba(5, 7, 25, 0.18);
+}
